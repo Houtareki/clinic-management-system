@@ -1,4 +1,13 @@
 /* ==================== HERO SECTION (FULL BACKGROUND) ==================== */
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+body {
+  margin: 0;
+  font-family: Raleway, sans-serif;
+  background-color: #eaf7ed; /* Màu nền xanh nhạt */
+  color: #1a3c22;
+}
+
 .hero-section {
   /* Đổi đường dẫn này nếu file ảnh của ông nằm chỗ khác */
   background-size: cover; /* Phủ kín khung */
@@ -75,4 +84,9 @@
 
 .icon-link {
   color: #faf2b4;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #1a3c22 !important;
 }
