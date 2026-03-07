@@ -25,12 +25,12 @@
       </div>
       <ul class="sidebar-menu">
         <li class="menu-title">Tổng quan</li>
-        <li class="active">
+        <li>
           <a href="admin.html"><i class="fa-solid fa-house"></i> Dashboard</a>
         </li>
 
         <li class="menu-title mt-3">Quản lý Nhân sự</li>
-        <li>
+        <li class="active">
           <a href="doctors.html"
             ><i class="fa-solid fa-user-doctor"></i> Hồ sơ Bác sĩ</a
           >
@@ -43,7 +43,12 @@
 
     <main class="main-wrapper">
       <header class="top-header shadow-sm">
-        <div class="dropdown ms-auto">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass text-muted"></i>
+          <input type="text" placeholder="Tìm kiếm..." />
+        </div>
+
+        <div class="dropdown">
           <div
             class="d-flex align-items-center gap-3 dropdown-toggle dropdown-toggle-no-caret"
             data-bs-toggle="dropdown"
@@ -101,50 +106,6 @@
       </header>
 
       <div class="container-fluid p-4">
-        <h3 class="fw-bold mb-4">Dashboard</h3>
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 mb-5">
-          <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-blue">
-                <i class="fa-solid fa-user-doctor"></i>
-              </div>
-              <div class="stat-title">Tổng bác sĩ</div>
-              <div class="stat-value">12</div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-green">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <div class="stat-title">Bệnh nhân hôm nay</div>
-              <div class="stat-value">45</div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-purple">
-                <i class="fa-regular fa-calendar-check"></i>
-              </div>
-              <div class="stat-title">Ca trực hôm nay</div>
-              <div class="stat-value">8</div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-orange">
-                <i class="fa-solid fa-arrow-trend-up"></i>
-              </div>
-              <div class="stat-title">Tỷ lệ hài lòng</div>
-              <div class="stat-value">98%</div>
-            </div>
-          </div>
-        </div>
-
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h4 class="fw-bold mb-0">Danh sách Bác sĩ</h4>
           <button
