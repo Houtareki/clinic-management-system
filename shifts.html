@@ -186,17 +186,24 @@
             data-bs-toggle="offcanvas"
             data-bs-target="#editShiftModal"
           >
-            <div class="shift-time">8:00 - 12:00</div>
-            <div class="shift-detail">
-              <i class="fa-regular fa-clock me-1"></i>4h
+            <div class="shift-time">08:00 - 12:00</div>
+
+            <div class="shift-detail mb-1">
+              <i class="fa-regular fa-clock me-1"></i> 4h
             </div>
-            <div class="shift-detail fw-bold text-dark mt-1">Phòng 204</div>
-            <div class="avatar-group mt-2">
+
+            <div class="shift-detail fw-bold text-dark mb-1">
+              <i class="fa-solid fa-door-open me-1"></i> Phòng 204, 211
+            </div>
+
+            <div class="avatar-group pt-2">
               <img
                 src="https://ui-avatars.com/api/?name=Dr+A&background=random"
+                title="Bs. Nguyễn Văn A"
               />
               <img
                 src="https://ui-avatars.com/api/?name=Dr+B&background=random"
+                title="Bs. Trần Thị B"
               />
             </div>
           </div>
@@ -245,43 +252,45 @@
         <div class="offcanvas-body p-4" style="background-color: #ffffff">
           <form>
             <div class="mb-4">
-              <label
-                class="form-label text-muted fw-bold"
-                style="font-size: 0.85rem"
-              >
-                Phòng khám
-              </label>
-              <select class="form-select custom-input" required>
-                <option selected disabled>Chọn...</option>
-                <option>Phòng Khám Nọi 204</option>
-                <option>Phòng Khám Nhi 211</option>
-                <option>Phòng Cấp Cứu</option>
-              </select>
-            </div>
-
-            <div class="row g-3 mb-4">
-              <div class="col-md-6">
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label
+                    class="form-label text-muted fw-bold"
+                    style="font-size: 0.85rem"
+                    >Ngày trực</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control custom-input"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label
+                    class="form-label text-muted fw-bold"
+                    style="font-size: 0.85rem"
+                  >
+                    Ca làm việc
+                  </label>
+                  <select class="form-select custom-input" required>
+                    <option selected disabled>Chọn...</option>
+                    <option>Ca sáng (8:00 - 12:00)</option>
+                    <option>Ca Chiều (13:00 - 17:00)</option>
+                  </select>
+                </div>
                 <label
                   class="form-label text-muted fw-bold"
                   style="font-size: 0.85rem"
-                  >Ngày trực</label
                 >
-                <input type="date" class="form-control custom-input" required />
-              </div>
-              <div class="col-md-6">
-                <label
-                  class="form-label text-muted fw-bold"
-                  style="font-size: 0.85rem"
-                >
-                  Ca làm việc
+                  Phòng khám
                 </label>
                 <select class="form-select custom-input" required>
                   <option selected disabled>Chọn...</option>
-                  <option>Ca sáng (8:00 - 12:00)</option>
-                  <option>Ca Chiều (13:00 - 17:00)</option>
+                  <option>Phòng Khám Tim mạch 204</option>
+                  <option>Phòng Khám Nhi 211</option>
+                  <option>Phòng Cấp Cứu</option>
                 </select>
               </div>
-
               <div class="mb-4">
                 <div class="col-md-12">
                   <label
@@ -292,7 +301,7 @@
                   </label>
                   <select class="form-select custom-input mb-3" required>
                     <option selected disabled>Tìm kiếm...</option>
-                    <option>Bs. Nguyễn Văn A (Khoa Nội)</option>
+                    <option>Bs. Nguyễn Văn A (Khoa Tim mạch)</option>
                     <option>Bs. Trần Thị B (Khoa Nhi)</option>
                   </select>
                 </div>
@@ -322,7 +331,7 @@
             type="button"
             class="btn btn-sm btn-dark rounded-pill px-3 ms-auto"
           >
-            <i class="fa-regular fa-trash-can me"></i>
+            <i class="fa-regular fa-trash-can"></i>
           </button>
           <button
             type="button"
@@ -340,20 +349,6 @@
 
         <div class="offcanvas-body p-4" style="background-color: #ffffff">
           <form>
-            <div class="mb-4">
-              <label
-                class="form-label text-muted fw-bold"
-                style="font-size: 0.85rem"
-              >
-                Phòng khám
-              </label>
-              <select class="form-select custom-input" required>
-                <option selected>Phòng Khám Nọi 204</option>
-                <option>Phòng Khám Nhi 211</option>
-                <option>Phòng Cấp Cứu</option>
-              </select>
-            </div>
-
             <div class="row g-3 mb-4">
               <div class="col-md-6">
                 <label
@@ -372,40 +367,92 @@
                 </label>
                 <select class="form-select custom-input" required>
                   <option selected disabled>Ca sáng (8:00 - 12:00)</option>
+                  <option>Ca sáng (8:00 - 12:00)</option>
                   <option>Ca Chiều (13:00 - 17:00)</option>
                 </select>
               </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="row g-2 align-items-center">
+                <label
+                  class="col-md-5 form-label text-muted fw-bold"
+                  style="font-size: 0.85rem"
+                >
+                  Phân công bác sĩ
+                </label>
+                <div class="col-md-2 ms-auto text-end">
+                  <button
+                    type="button"
+                    class="btn btn-primary-custom btn-sm"
+                    style="border-radius: 25px"
+                    id="btnAddAssign"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
 
               <div class="mb-4">
+                <select class="form-select custom-input" required>
+                  <option selected disabled>Chọn phòng...</option>
+                  <option>Phòng Khám Tim mạch 204</option>
+                  <option>Phòng Khám Nhi 211</option>
+                  <option>Phòng Cấp Cứu</option>
+                </select>
+              </div>
+              <div class="mb-4">
                 <div class="col-md-12">
-                  <label
-                    class="form-label text-muted fw-bold mb-0"
-                    style="font-size: 0.85rem"
-                  >
-                    Bác sĩ phụ trách
-                  </label>
                   <select class="form-select custom-input mb-3" required>
                     <option selected disabled>Tìm kiếm...</option>
                     <option>Bs. Nguyễn Văn A (Khoa Nội)</option>
                     <option>Bs. Trần Thị B (Khoa Nhi)</option>
                   </select>
+                </div>
+              </div>
 
-                  <div class="selected-doctors">
-                    <div class="doctor-tag">
+              <div id="assigned-container" class="mb-4">
+                <div class="room-tag-group">
+                  <div class="room-tag-header">
+                    <span class="fw-bold" style="color: #264b33">
+                      <i class="fa-solid fa-door-open me-2 text-primary"></i
+                      >Phòng Khám Tim mạch 204
+                    </span>
+                    <i
+                      class="fa-solid fa-xmark remove-room-btn"
+                      title="Xóa toàn bộ phòng"
+                    ></i>
+                  </div>
+
+                  <div class="room-tag-body">
+                    <div class="doctor-pill">
                       <img
                         src="https://ui-avatars.com/api/?name=Dr+A&background=random"
-                        alt="Avatar"
                       />
                       <span>Bs. Nguyễn Văn A</span>
-                      <i class="fa-solid fa-xmark remove-btn"></i>
+                      <i class="fa-solid fa-xmark remove-doc-btn"></i>
                     </div>
-                    <div class="doctor-tag">
+                  </div>
+                </div>
+                <div class="room-tag-group">
+                  <div class="room-tag-header">
+                    <span class="fw-bold" style="color: #264b33">
+                      <i class="fa-solid fa-door-open me-2 text-primary"></i
+                      >Phòng khám Nhi 211
+                    </span>
+                    <i
+                      class="fa-solid fa-xmark remove-room-btn"
+                      title="Xóa toàn bộ phòng"
+                    ></i>
+                  </div>
+
+                  <div class="room-tag-body">
+                    <div class="doctor-pill">
                       <img
-                        src="https://ui-avatars.com/api/?name=Dr+B&background=random"
-                        alt="Avatar"
+                        src="https://ui-avatars.com/api/?name=Dr+C&background=random"
                       />
-                      <span>Bs. Trần Thị B</span>
-                      <i class="fa-solid fa-xmark remove-btn"></i>
+                      <span>Bs. Lê Hoàng C</span>
+                      <i class="fa-solid fa-xmark remove-doc-btn"></i>
                     </div>
                   </div>
                 </div>

@@ -295,7 +295,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 10;
-  border-top: 5px solid red;
+  border-top: 5px solid greenyellow;
   transition: transform 0.2s;
   cursor: pointer;
 }
@@ -320,7 +320,7 @@ body {
 
 .avatar-group {
   display: flex;
-  margin-top: auto;
+  margin-top: 12px;
 }
 
 .avatar-group img {
@@ -384,33 +384,67 @@ body {
   font-weight: 400;
 }
 
-.doctor-tag {
+.room-tag-group {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.room-tag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 8px 12px;
+  border-bottom: 1 solid #e2e8f0;
+  font-size: 0.85rem;
+}
+
+.remove-room-btn {
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.remove-room-btn:hover {
+  color: #dc3545;
+}
+
+.room-tag-body {
+  padding: 10px 12px 4px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doctor-pill {
   display: inline-flex;
   align-items: center;
-  background-color: #f8fafc;
-  border: 1px solid #eaedf1;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: 20px;
-  padding: 4px 12px 4px 4px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  font-size: 0.85rem;
+  padding: 4px 10px 4px 4px;
+  font-size: 0.843m;
   font-weight: 600;
   color: #334155;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
-.doctor-tag img {
-  width: 24px;
-  height: 24px;
+.doctor-pill img {
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
-.doctor-tag .remove-btn {
-  margin-left: 10px;
-  color: #a0a5ba;
+.remove-doc-btn {
+  color: #94a3b8;
   cursor: pointer;
+  margin-left: 8px;
 }
 
-.doctor-tag .remove-btn:hover {
+.remove-doc-btn:hover {
   color: #dc3545;
 }
