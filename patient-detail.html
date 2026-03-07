@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trustcare | Chi tiết bệnh nhân</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/patient-detail.css" />
+  </head>
+  <body>
+    <section>
+      <input type="checkbox" id="sidebar-toggle" hidden />
+      <aside class="sidebar shadow-sm">
+        <div class="brand">
+          <i class="fa-solid fa-hospital-user text-success me-2 fs-4"></i>
+          Trustcare Clinic
+        </div>
+        <ul class="sidebar-menu">
+          <li class="menu-title">Tổng quan</li>
+          <li>
+            <a href="receptionist.html"
+              ><i class="fa-solid fa-house"></i> Dashboard</a
+            >
+          </li>
+          <li class="active">
+            <a href="patients.html"
+              ><i class="fa-solid fa-users"></i> Quản lý Bệnh nhân</a
+            >
+          </li>
+          <li>
+            <a href="shifts.html"
+              ><i class="fa-regular fa-calendar-days"></i> Quản lý Lịch trực</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <main class="main-wrapper">
+      <header class="top-header shadow-sm">
+        <div class="d-flex align-items-center">
+          <label
+            for="sidebar-toggle"
+            class="menu-toggle-btn me-3 mb-0"
+            style="cursor: pointer; font-size: 1.25rem"
+            ><i class="fa-solid fa-bars"></i
+          ></label>
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass text-muted"></i
+            ><input type="text" placeholder="Tìm kiếm..." />
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="d-flex align-items-center gap-3">
+            <div class="text-end d-none d-md-block">
+              <div class="fw-bold fs-6">Lê Thị Huyền</div>
+              <div class="text-muted" style="font-size: 0.75rem">
+                Receptionist
+              </div>
+            </div>
+            <img
+              src="https://ui-avatars.com/api/?name=Tuan&background=0d6efd&color=fff"
+              class="rounded-circle shadow-sm"
+              width="40"
+              height="40"
+            />
+          </div>
+        </div>
+      </header>
+
+      <div class="container-fluid p-4">
+        <a
+          href="patients.html"
+          class="text-decoration-none text-muted mb-4 d-inline-block fw-bold back-link"
+        >
+          <i class="fa-solid fa-arrow-left me-2"></i> Quay lại
+        </a>
+
+        <div class="row align-items-start g-4">
+          <div class="col-12">
+            <div
+              class="detail-card p-4 d-flex align-items-center justify-content-between position-relative"
+            >
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://ui-avatars.com/api/?name=A+R&background=eaf7ed&color=264b33&size=120"
+                  alt="Avatar"
+                  class="profile-avatar me-4"
+                />
+                <div>
+                  <div
+                    class="text-primary fw-bold mb-1"
+                    style="font-size: 0.85rem"
+                  >
+                    #PT-0025
+                  </div>
+                  <h3 class="fw-bold text-dark mb-2">Alberto Ripley</h3>
+                  <div
+                    class="d-flex gap-4 text-muted"
+                    style="font-size: 0.85rem"
+                  >
+                    <span
+                      ><i class="fa-regular fa-calendar me-1"></i>
+                      25/01/1990</span
+                    >
+                    <span><i class="fa-solid fa-venus-mars me-1"></i> Nam</span>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-light rounded-circle border shadow-sm"
+                  style="width: 45px; height: 45px"
+                  title="Chỉnh sửa hồ sơ"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editPatientModal"
+                >
+                  <i class="fa-solid fa-pen text-muted"></i>
+                </button>
+                <button
+                  class="btn btn-primary-custom px-4 shadow-sm"
+                  style="border-radius: 8px"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addRecordModal"
+                >
+                  <i class="fa-regular fa-calendar-plus me-2"></i> Đặt lịch khám
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-card mb-4 p-0 overflow-hidden">
+              <div
+                class="p-4 border-bottom d-flex justify-content-between align-items-center bg-light"
+              >
+                <h5 class="fw-bold text-dark mb-0">Lịch sử khám bệnh</h5>
+              </div>
+
+              <div class="p-0 table-responsive">
+                <table class="table table-custom table-hover mb-0">
+                  <thead>
+                    <tr>
+                      <th style="width: 25%; padding-left: 24px">Ngày khám</th>
+                      <th style="width: 30%">Bác sĩ phụ trách</th>
+                      <th style="width: 30%">Chẩn đoán</th>
+                      <th style="width: 15%; text-align: center">Trạng thái</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding-left: 24px">
+                        <div class="fw-bold">30 Apr 2024</div>
+                        <div class="text-muted" style="font-size: 0.8rem">
+                          14:30 PM
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="https://ui-avatars.com/api/?name=Nguyen+Van+A&background=random"
+                            class="rounded-circle me-2"
+                            width="32"
+                            height="32"
+                          />
+                          <div>
+                            <div
+                              class="fw-bold text-dark"
+                              style="font-size: 0.85rem"
+                            >
+                              Bs. Nguyễn Văn A
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-muted fst-italic">
+                        Bệnh nhân bị viêm họng cấp. Kê đơn thuốc 5 ngày.
+                      </td>
+                      <td class="text-center">
+                        <span class="status-badge status-completed"
+                          >Hoàn thành</span
+                        >
+                      </td>
+                      <td class="text-center">
+                        <div class="dropdown">
+                          <button
+                            class="action-btn dropdown-toggle dropdown-toggle-no-caret"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                          >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul
+                            class="dropdown-menu dropdown-menu-end shadow-sm border-0"
+                          >
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editRecordModal"
+                                ><i class="fa-solid fa-stethoscope me-2"></i>
+                                Cập nhật</a
+                              >
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                              <a
+                                class="dropdown-item text-danger"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteRecordModal"
+                                ><i class="fa-regular fa-trash-can me-2"></i>
+                                Xóa</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="padding-left: 24px">
+                        <div class="fw-bold">15 Mar 2024</div>
+                        <div class="text-muted" style="font-size: 0.8rem">
+                          08:00 AM
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="https://ui-avatars.com/api/?name=Tran+Thi+B&background=random"
+                            class="rounded-circle me-2"
+                            width="32"
+                            height="32"
+                          />
+                          <div>
+                            <div
+                              class="fw-bold text-dark"
+                              style="font-size: 0.85rem"
+                            >
+                              Bs. Trần Thị B
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-muted fst-italic">Tái khám định kỳ.</td>
+                      <td class="text-center">
+                        <span class="status-badge status-pending"
+                          >Chờ khám</span
+                        >
+                      </td>
+                      <td class="text-center">
+                        <div class="dropdown">
+                          <button
+                            class="action-btn dropdown-toggle dropdown-toggle-no-caret"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                          >
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                          </button>
+                          <ul
+                            class="dropdown-menu dropdown-menu-end shadow-sm border-0"
+                          >
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editRecordModal"
+                                ><i class="fa-solid fa-stethoscope me-2"></i>
+                                Cập nhật</a
+                              >
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                              <a
+                                class="dropdown-item text-danger"
+                                href="#"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteRecordModal"
+                                ><i class="fa-regular fa-trash-can me-2"></i>
+                                Xóa</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="detail-card p-4 h-100">
+              <h6
+                class="fw-bold text-muted mb-4"
+                style="font-size: 0.85rem; text-transform: uppercase"
+              >
+                Thông tin cơ bản (About)
+              </h6>
+
+              <div class="d-flex align-items-center mb-4">
+                <div
+                  class="me-3 bg-light text-primary rounded-circle d-flex justify-content-center align-items-center"
+                  style="width: 45px; height: 45px; font-size: 1.1rem"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-muted"
+                    style="
+                      font-size: 0.75rem;
+                      text-transform: uppercase;
+                      font-weight: 600;
+                    "
+                  >
+                    Điện thoại
+                  </div>
+                  <span class="fw-bold text-dark">+1 54546 45648</span>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <div
+                  class="me-3 bg-light text-danger rounded-circle d-flex justify-content-center align-items-center"
+                  style="width: 45px; height: 45px; font-size: 1.1rem"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-muted"
+                    style="
+                      font-size: 0.75rem;
+                      text-transform: uppercase;
+                      font-weight: 600;
+                    "
+                  >
+                    Địa chỉ
+                  </div>
+                  <span
+                    class="fw-bold text-dark d-block"
+                    style="word-break: break-word"
+                    >4150 Hiney Road, Las Vegas</span
+                  >
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <div
+                  class="me-3 bg-light text-success rounded-circle d-flex justify-content-center align-items-center"
+                  style="width: 45px; height: 45px; font-size: 1.1rem"
+                >
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <div>
+                  <div
+                    class="text-muted"
+                    style="
+                      font-size: 0.75rem;
+                      text-transform: uppercase;
+                      font-weight: 600;
+                    "
+                  >
+                    Ngày đăng ký hệ thống
+                  </div>
+                  <span class="fw-bold text-dark">15 Aug 2023</span>
+                </div>
+              </div>
+
+              <hr class="text-muted opacity-25 my-4" />
+
+              <button
+                class="btn btn-outline-danger w-100 fw-bold rounded-pill"
+                data-bs-toggle="modal"
+                data-bs-target="#deletePatientModal"
+              >
+                <i class="fa-solid fa-trash-can me-2"></i> Xóa bệnh nhân
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
