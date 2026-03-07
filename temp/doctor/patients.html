@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="assets/css/receptionist.css" />
+    <link rel="stylesheet" href="../../assets/css/receptionist.css" />
   </head>
   <body>
     <aside class="sidebar shadow-sm">
@@ -25,19 +25,18 @@
       </div>
       <ul class="sidebar-menu">
         <li class="menu-title">Tổng quan</li>
-        <li class="active">
-          <a href="receptionist.html"
-            ><i class="fa-solid fa-house"></i> Dashboard</a
-          >
-        </li>
         <li>
+          <a href="doctor.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+        </li>
+        <li class="active">
           <a href="patients.html"
-            ><i class="fa-solid fa-users"></i> Quản lý Bệnh nhân</a
+            ><i class="fa-solid fa-users"></i> Danh sách bệnh nhân</a
           >
         </li>
+
         <li>
           <a href="shifts.html"
-            ><i class="fa-regular fa-calendar-days"></i> Quản lý Lịch trực</a
+            ><i class="fa-regular fa-calendar-days"></i> Lịch trực</a
           >
         </li>
       </ul>
@@ -45,20 +44,25 @@
 
     <main class="main-wrapper">
       <header class="top-header shadow-sm">
-        <div class="dropdown ms-auto">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass text-muted"></i>
+          <input type="text" placeholder="Tìm kiếm..." />
+        </div>
+
+        <div class="dropdown">
           <div
             class="d-flex align-items-center gap-3 dropdown-toggle dropdown-toggle-no-caret"
             data-bs-toggle="dropdown"
             style="cursor: pointer"
           >
             <div class="text-end d-none d-md-block">
-              <div class="fw-bold fs-6">Lê Thị Huyền</div>
-              <div class="text-muted" style="font-size: 0.75rem">
-                Receptionist
+              <div class="text-end d-none d-md-block">
+                <div class="fw-bold fs-6">Bác sĩ Minh</div>
+                <div class="text-muted" style="font-size: 0.75rem">Doctor</div>
               </div>
             </div>
             <img
-              src="https://ui-avatars.com/api/?name=Huyen&background=0d6efd&color=fff"
+              src="https://ui-avatars.com/api/?name=minh&background=0d6efd&color=fff"
               class="rounded-circle shadow-sm"
               width="40"
               height="40"
@@ -103,52 +107,63 @@
       </header>
 
       <div class="container-fluid p-4">
-        <div class="welcome-banner">
-          <h2 class="fw-bold mb-2">Chào mừng trở lại! 👋</h2>
-          <p class="mb-0 opacity-75 fs-6">
-            Hãy cùng xem qua thông số phòng khám nhé!
-          </p>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="fw-bold mb-0">Danh sách Bệnh nhân</h4>
         </div>
-        <h3 class="fw-bold mb-4">Dashboard</h3>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 mb-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
           <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-blue">
-                <i class="fa-solid fa-user-doctor"></i>
+            <div class="doctor-card position-relative">
+              <div
+                class="dropdown position-absolute top-0 end-0 mt-3 me-3"
+              ></div>
+              <div class="d-flex gap-3">
+                <img
+                  src="https://ui-avatars.com/api/?name=A+R&background=eaf7ed&color=264b33&size=120"
+                  class="doctor-img shadow-sm"
+                  alt="Doctor"
+                />
+                <div class="doctor-info flex-grow-1">
+                  <h5>Alberto Ripley</h5>
+                  <div class="specialty">26, Nam</div>
+                  <div class="detail-text">
+                    <i
+                      class="fa-solid fa-calendar-check text-muted me-1 w-15px"
+                    ></i>
+                    Lần khám cuối: 30 tháng 4 năm 2024
+                  </div>
+                  <div class="detail-text">
+                    <i class="fa-solid fa-phone text-muted me-1 w-15px"></i>
+                    04546 45648
+                  </div>
+                </div>
               </div>
-              <div class="stat-title">Tổng bác sĩ</div>
-              <div class="stat-value">12</div>
             </div>
           </div>
 
           <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-green">
-                <i class="fa-solid fa-users"></i>
+            <div class="doctor-card position-relative">
+              <div class="d-flex gap-3">
+                <img
+                  src="https://ui-avatars.com/api/?name=T+B&background=eaf7ed&color=264b33&size=120"
+                  class="doctor-img shadow-sm"
+                  alt="Doctor"
+                />
+                <div class="doctor-info flex-grow-1">
+                  <h5>Trần Thị B</h5>
+                  <div class="specialty">30, Nữ</div>
+                  <div class="detail-text">
+                    <i
+                      class="fa-solid fa-calendar-check text-muted me-1 w-15px"
+                    ></i>
+                    Lần khám cuối: 30 tháng 4 năm 2025
+                  </div>
+                  <div class="detail-text">
+                    <i class="fa-solid fa-phone text-muted me-1 w-15px"></i>
+                    0912.345.678
+                  </div>
+                </div>
               </div>
-              <div class="stat-title">Bệnh nhân hôm nay</div>
-              <div class="stat-value">45</div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-purple">
-                <i class="fa-regular fa-calendar-check"></i>
-              </div>
-              <div class="stat-title">Ca trực hôm nay</div>
-              <div class="stat-value">8</div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="stat-card">
-              <div class="stat-icon icon-orange">
-                <i class="fa-solid fa-arrow-trend-up"></i>
-              </div>
-              <div class="stat-title">Tỷ lệ hài lòng</div>
-              <div class="stat-value">98%</div>
             </div>
           </div>
         </div>

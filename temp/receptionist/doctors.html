@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="assets/css/admin.css" />
+    <link rel="stylesheet" href="../../assets/css/admin.css" />
   </head>
   <body>
     <aside class="sidebar shadow-sm">
@@ -26,17 +26,25 @@
       <ul class="sidebar-menu">
         <li class="menu-title">Tổng quan</li>
         <li>
-          <a href="admin.html"><i class="fa-solid fa-house"></i> Dashboard</a>
-        </li>
-
-        <li class="menu-title mt-3">Quản lý Nhân sự</li>
-        <li class="active">
-          <a href="doctors.html"
-            ><i class="fa-solid fa-user-doctor"></i> Hồ sơ Bác sĩ</a
+          <a href="receptionist.html"
+            ><i class="fa-solid fa-house"></i> Dashboard</a
           >
         </li>
         <li>
-          <a href="#"><i class="fa-solid fa-user-shield"></i> Cấp tài khoản</a>
+          <a href="patients.html"
+            ><i class="fa-solid fa-users"></i> Quản lý Bệnh nhân</a
+          >
+        </li>
+
+        <li>
+          <a href="shifts.html"
+            ><i class="fa-regular fa-calendar-days"></i> Quản lý Lịch trực</a
+          >
+        </li>
+        <li class="active">
+          <a href="../doctor/doctors.html"
+            ><i class="fa-solid fa-user-doctor"></i> Danh sách Bác sĩ</a
+          >
         </li>
       </ul>
     </aside>
@@ -55,9 +63,9 @@
             style="cursor: pointer"
           >
             <div class="text-end d-none d-md-block">
-              <div class="fw-bold fs-6">Admin Tuấn</div>
+              <div class="fw-bold fs-6">Lê Thị Huyền</div>
               <div class="text-muted" style="font-size: 0.75rem">
-                System Administrator
+                Receptionist
               </div>
             </div>
             <img
@@ -108,13 +116,6 @@
       <div class="container-fluid p-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h4 class="fw-bold mb-0">Danh sách Bác sĩ</h4>
-          <button
-            class="btn btn-primary-custom shadow-sm"
-            data-bs-toggle="modal"
-            data-bs-target="#addDoctorModal "
-          >
-            <i class="fa-solid fa-plus me-1"></i> Thêm Bác sĩ
-          </button>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
