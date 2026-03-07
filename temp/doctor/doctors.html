@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trustcare | Receptionist</title>
+    <title>Trustcare | Admin Dashboard</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="../../assets/css/receptionist.css" />
+    <link rel="stylesheet" href="../../assets/css/admin.css" />
   </head>
   <body>
     <aside class="sidebar shadow-sm">
@@ -26,23 +26,14 @@
       <ul class="sidebar-menu">
         <li class="menu-title">Tổng quan</li>
         <li>
-          <a href="receptionist.html"
+          <a href="../admin/admin.html"
             ><i class="fa-solid fa-house"></i> Dashboard</a
           >
         </li>
+
         <li class="active">
-          <a href="patients.html"
-            ><i class="fa-solid fa-users"></i> Quản lý Bệnh nhân</a
-          >
-        </li>
-        <li>
-          <a href="shifts.html"
-            ><i class="fa-regular fa-calendar-days"></i> Quản lý Lịch trực</a
-          >
-        </li>
-        <li>
           <a href="doctors.html"
-            ><i class="fa-solid fa-user-doctor"></i> Danh sách Bác sĩ</a
+            ><i class="fa-solid fa-user-doctor"></i> Hồ sơ Bác sĩ</a
           >
         </li>
       </ul>
@@ -62,13 +53,13 @@
             style="cursor: pointer"
           >
             <div class="text-end d-none d-md-block">
-              <div class="fw-bold fs-6">Lê Thị Huyền</div>
-              <div class="text-muted" style="font-size: 0.75rem">
-                Receptionist
+              <div class="text-end d-none d-md-block">
+                <div class="fw-bold fs-6">Bác sĩ Minh</div>
+                <div class="text-muted" style="font-size: 0.75rem">Doctor</div>
               </div>
             </div>
             <img
-              src="https://ui-avatars.com/api/?name=Huyen&background=0d6efd&color=fff"
+              src="https://ui-avatars.com/api/?name=Tuan&background=0d6efd&color=fff"
               class="rounded-circle shadow-sm"
               width="40"
               height="40"
@@ -81,9 +72,9 @@
             style="min-width: 200px"
           >
             <li class="px-3 py-2 d-md-none">
-              <span class="fw-bold d-block">Lê Thị Huyền</span>
+              <span class="fw-bold d-block">Admin Tuấn</span>
               <span class="text-muted" style="font-size: 0.8rem"
-                >Receptionist</span
+                >System Administrator</span
               >
               <hr class="dropdown-divider mt-2 mb-0" />
             </li>
@@ -103,7 +94,7 @@
             <li>
               <a
                 class="dropdown-item py-2 text-danger fw-bold mb-1"
-                href="../../login.html"
+                href="login.html"
                 ><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Đăng
                 xuất</a
               >
@@ -114,20 +105,23 @@
 
       <div class="container-fluid p-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="fw-bold mb-0">Danh sách Bệnh nhân</h4>
+          <h4 class="fw-bold mb-0">Danh sách Bác sĩ</h4>
           <button
             class="btn btn-primary-custom shadow-sm"
             data-bs-toggle="modal"
-            data-bs-target="#addPatientModal"
+            data-bs-target="#addDoctorModal "
           >
-            <i class="fa-solid fa-plus me-1"></i> Thêm Bệnh nhân
+            <i class="fa-solid fa-plus me-1"></i> Thêm Bác sĩ
           </button>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
           <div class="col">
             <div class="doctor-card position-relative">
-              <div class="dropdown position-absolute top-0 end-0 mt-3 me-3">
+              <div
+                class="dropdown position-absolute top-0 end-0 mt-3 me-3"
+                style="z-index: 2"
+              >
                 <button
                   class="action-btn dropdown-toggle dropdown-toggle-no-caret"
                   type="button"
@@ -141,7 +135,7 @@
                       class="dropdown-item"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#editPatientModal"
+                      data-bs-target="#editDoctorModal"
                       ><i
                         class="fa-regular fa-pen-to-square me-2 text-primary"
                       ></i>
@@ -153,33 +147,34 @@
                       class="dropdown-item text-danger"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#deletePatientModal"
+                      data-bs-target="#deleteDoctorModal"
                       ><i class="fa-regular fa-trash-can me-2"></i> Xóa</a
                     >
                   </li>
                 </ul>
               </div>
+
               <a
-                href="patient-detail.html"
-                class="d-flex gap-3 gap-3 text-decoration-none text-dark stretched-link"
+                href="doctor-detail.html"
+                class="d-flex gap-3 text-decoration-none text-dark stretched-link"
               >
                 <img
-                  src="https://ui-avatars.com/api/?name=A+R&background=eaf7ed&color=264b33&size=120"
+                  src="https://ui-avatars.com/api/?name=N+A&background=eaf7ed&color=264b33&size=120"
                   class="doctor-img shadow-sm"
                   alt="Doctor"
                 />
                 <div class="doctor-info flex-grow-1">
-                  <h5>Alberto Ripley</h5>
-                  <div class="specialty">26, Nam</div>
+                  <h5>Bs. Nguyễn Văn A</h5>
+                  <div class="specialty">Khoa Tim Mạch</div>
                   <div class="detail-text">
                     <i
-                      class="fa-solid fa-calendar-check text-muted me-1 w-15px"
+                      class="fa-solid fa-graduation-cap text-muted me-1 w-15px"
                     ></i>
-                    Lần khám cuối: 30 tháng 4 năm 2024
+                    Tiến sĩ Y khoa
                   </div>
                   <div class="detail-text">
                     <i class="fa-solid fa-phone text-muted me-1 w-15px"></i>
-                    04546 45648
+                    0987.654.321
                   </div>
                 </div>
               </a>
@@ -188,7 +183,10 @@
 
           <div class="col">
             <div class="doctor-card position-relative">
-              <div class="dropdown position-absolute top-0 end-0 mt-3 me-3">
+              <div
+                class="dropdown position-absolute top-0 end-0 mt-3 me-3"
+                style="z-index: 2"
+              >
                 <button
                   class="action-btn dropdown-toggle dropdown-toggle-no-caret"
                   type="button"
@@ -202,7 +200,7 @@
                       class="dropdown-item"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#editPatientModal"
+                      data-bs-target="#editDoctorModal"
                       ><i
                         class="fa-regular fa-pen-to-square me-2 text-primary"
                       ></i>
@@ -214,15 +212,16 @@
                       class="dropdown-item text-danger"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-dismiss="#deletePatientModal"
+                      data-bs-target="#deleteDoctorModal"
                       ><i class="fa-regular fa-trash-can me-2"></i> Xóa</a
                     >
                   </li>
                 </ul>
               </div>
+
               <a
-                href="patient-detail.html"
-                class="d-flex gap-3 gap-3 text-decoration-none text-dark stretched-link"
+                href="doctor-detail.html"
+                class="d-flex gap-3 text-decoration-none text-dark stretched-link"
               >
                 <img
                   src="https://ui-avatars.com/api/?name=T+B&background=eaf7ed&color=264b33&size=120"
@@ -230,13 +229,13 @@
                   alt="Doctor"
                 />
                 <div class="doctor-info flex-grow-1">
-                  <h5>Trần Thị B</h5>
-                  <div class="specialty">30, Nữ</div>
+                  <h5>Bs. Trần Thị B</h5>
+                  <div class="specialty">Khoa Nhi</div>
                   <div class="detail-text">
                     <i
-                      class="fa-solid fa-calendar-check text-muted me-1 w-15px"
+                      class="fa-solid fa-graduation-cap text-muted me-1 w-15px"
                     ></i>
-                    Lần khám cuối: 30 tháng 4 năm 2025
+                    Thạc sĩ Y khoa
                   </div>
                   <div class="detail-text">
                     <i class="fa-solid fa-phone text-muted me-1 w-15px"></i>
@@ -255,9 +254,9 @@
       <!-- add doctor -->
       <div
         class="modal fade"
-        id="addPatientModal"
+        id="addDoctorModal"
         tabindex="-1"
-        aria-labelledby="addPatientModalLabel"
+        aria-labelledby="addDoctorModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -271,9 +270,9 @@
             >
               <h5
                 class="modal-title fw-bold text-success"
-                id="addPatientModalLabel"
+                id="addDoctorModalLabel"
               >
-                <i class="fa-solid fa-user-doctor me-2"></i> Thêm Bệnh nhân
+                <i class="fa-solid fa-user-doctor me-2"></i> Thêm bác sĩ mới
               </h5>
 
               <button
@@ -286,12 +285,12 @@
 
             <div class="modal-body p-4">
               <form>
-                <h6 class="fw-bold mb-3 text-muted">1. Thông tin Cá nhân</h6>
+                <h6 class="fw-bold mb-3 text-muted">1. Thông tin Tài khoản</h6>
                 <div class="row g-3 mb-4">
                   <div class="col-md-6">
                     <label class="form-label fw-medium"
-                      >Họ và Tên <span class="text-danger">*</span>
-                    </label>
+                      >Họ và Tên <span class="text-danger">*</span></label
+                    >
                     <input
                       type="text"
                       class="form-control"
@@ -301,46 +300,98 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label fw-medium"
-                      >Ngày sinh <span class="text-danger">*</span></label
-                    >
-                    <input type="date" class="form-control" required />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium">
-                      Giới tính <span class="text-danger">*</span>
-                    </label>
-                    <select class="form-select">
-                      <option selected>Chọn...</option>
-                      <option>Nam</option>
-                      <option>Nữ</option>
-                      <option>Khác</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
                       >Số điện thoại <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="VD: 09xx xxxx xxxx"
+                      placeholder="VD: xx xxx xxx"
                       required
                     />
                   </div>
                   <div class="col-md-12">
                     <label class="form-label fw-medium"
-                      >Địa chỉ <span class="text-danger">*</span></label
+                      >Email <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="VD: Hà Nội"
+                      placeholder="VD: abc@xyz.com"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Tên đăng nhập <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="username"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Mật khẩu <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="••••••••"
                       required
                     />
                   </div>
                 </div>
                 <hr class="text-muted" />
 
+                <h6 class="fw-bold mb-3 text-muted">2. Hồ sơ chuyên môn</h6>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Chuyên khoa <span class="text-danger">*</span></label
+                    >
+                    <select class="form-select">
+                      <option selected>Chọn khoa ...</option>
+                      <option>Khoa nội</option>
+                      <option>Khoa ngoại</option>
+                      <option>Khoa nhi</option>
+                      <option>Khoa tim mạch</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Bằng cấp <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="VD: Tiến sĩ"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Ảnh đại diện <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="link url"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Giới thiệu tiểu sử</label
+                    >
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Nhập kinh nghiệm làm việc, giới thiệu bản thân..."
+                    ></textarea>
+                  </div>
+                </div>
                 <div
                   class="modal-footer mt-4"
                   style="border-top: 1px solid #eaedf1; padding-top: 1rem"
@@ -362,12 +413,12 @@
         </div>
       </div>
 
-      <!-- editPatient -->
+      <!-- editDoctor -->
       <div
         class="modal fade"
-        id="editPatientModal"
+        id="editDoctorModal"
         tabindex="-1"
-        aria-labelledby="editPatientModalLabel"
+        aria-labelledby="editDoctorModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -381,7 +432,7 @@
             >
               <h5
                 class="modal-title fw-bold text-success"
-                id="editPatientModalLabel"
+                id="editDoctorModalLabel"
               >
                 <i class="fa-solid fa-user-doctor me-2"></i> Cập nhật hồ sơ
               </h5>
@@ -396,7 +447,7 @@
 
             <div class="modal-body p-4">
               <form>
-                <h6 class="fw-bold mb-3 text-muted">1. Thông tin Cá nhân</h6>
+                <h6 class="fw-bold mb-3 text-muted">1. Thông tin Tài khoản</h6>
                 <div class="row g-3 mb-4">
                   <div class="col-md-6">
                     <label class="form-label fw-medium"
@@ -411,46 +462,98 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label fw-medium"
-                      >Ngày sinh <span class="text-danger">*</span></label
-                    >
-                    <input type="date" class="form-control" required />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium">
-                      Giới tính <span class="text-danger">*</span>
-                    </label>
-                    <select class="form-select">
-                      <option selected>Chọn...</option>
-                      <option>Nam</option>
-                      <option>Nữ</option>
-                      <option>Khác</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
                       >Số điện thoại <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="VD: 09xx xxxx xxxx"
+                      placeholder="VD: xx xxx xxx"
                       required
                     />
                   </div>
                   <div class="col-md-12">
                     <label class="form-label fw-medium"
-                      >Địa chỉ <span class="text-danger">*</span></label
+                      >Email <span class="text-danger">*</span></label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="VD: Hà Nội"
+                      placeholder="VD: abc@xyz.com"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Tên đăng nhập <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="username"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Mật khẩu mới <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="••••••••"
                       required
                     />
                   </div>
                 </div>
                 <hr class="text-muted" />
 
+                <h6 class="fw-bold mb-3 text-muted">2. Hồ sơ chuyên môn</h6>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Chuyên khoa <span class="text-danger">*</span></label
+                    >
+                    <select class="form-select">
+                      <option selected>Chọn khoa ...</option>
+                      <option>Khoa nội</option>
+                      <option>Khoa ngoại</option>
+                      <option>Khoa nhi</option>
+                      <option>Khoa tim mạch</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Bằng cấp <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="VD: Tiến sĩ"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Ảnh đại diện <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="link url"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Giới thiệu tiểu sử</label
+                    >
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Nhập kinh nghiệm làm việc, giới thiệu bản thân..."
+                    ></textarea>
+                  </div>
+                </div>
                 <div
                   class="modal-footer mt-4"
                   style="border-top: 1px solid #eaedf1; padding-top: 1rem"
@@ -475,13 +578,13 @@
       <!-- delete modal -->
       <div
         class="modal fade"
-        id="deletePatientModal"
+        id="deleteDoctorModal"
         tabindex="-1"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-sm modal-dialog-centered">
           <div
-            class="modal-content border-0 shadow-lg"
+            class="modal-content border-0 shaow-lg"
             style="border-radius: 16px"
           >
             <div class="modal-body p-4 text-center">
