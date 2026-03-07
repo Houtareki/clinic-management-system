@@ -237,3 +237,14 @@ body {
   font-weight: 800;
   line-height: 1;
 }
+
+.welcome-banner {
+  background: linear-gradient(135deg, #264b33 0%, #3bb2ae 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 30px rgba(38, 75, 51, 0.15);
+  position: relative;
+  overflow: hidden;
+}
