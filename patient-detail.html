@@ -396,6 +396,523 @@
       </div>
     </main>
 
+    <section>
+      <!-- delete modal -->
+      <div
+        class="modal fade"
+        id="deletePatientModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+          <div
+            class="modal-content border-0 shaow-lg"
+            style="border-radius: 16px"
+          >
+            <div class="modal-body p-4 text-center">
+              <div class="text-danger mb-3">
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="font-size: 4rem"
+                ></i>
+              </div>
+
+              <h5 class="fw-bold mb-2 text-dark">Xác nhận Xóa?</h5>
+              <p class="text-muted mb-4" style="font-size: 0.9rem">
+                Bạn có chắc chắn muốn xóa bệnh nhân này khỏi hệ thống?
+              </p>
+
+              <div class="d-flex justify-content-center gap-2">
+                <button
+                  type="button"
+                  class="btn btn-light border px-4"
+                  data-bs-dismiss="modal"
+                >
+                  Hủy
+                </button>
+                <button type="button" class="btn btn-danger px-4 shadow-sm">
+                  Xác nhận
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--================ delete record ======================-->
+      <div
+        class="modal fade"
+        id="deleteRecordModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+          <div
+            class="modal-content border-0 shaow-lg"
+            style="border-radius: 16px"
+          >
+            <div class="modal-body p-4 text-center">
+              <div class="text-danger mb-3">
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="font-size: 4rem"
+                ></i>
+              </div>
+              <h5 class="fw-bold mb-2 text-dark">Xóa ca khám?</h5>
+              <p class="text-muted mb-4" style="font-size: 0.9rem">
+                Bạn có chắc chắn muốn xóa ca khám này không?
+              </p>
+              <div class="d-flex justify-content-center gap-2">
+                <button
+                  type="button"
+                  class="btn btn-light border px-4"
+                  data-bs-dismiss="modal"
+                >
+                  Hủy
+                </button>
+                <button type="button" class="btn btn-danger px-4 shadow-sm">
+                  Xác nhận
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--================ edit patient modal =====================-->
+      <div
+        class="modal fade"
+        id="editPatientModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div
+            class="modal-content border-0 shadow-lg"
+            style="border-radius: 16px"
+          >
+            <div
+              class="modal-header"
+              style="background-color: #f5f8fa; border-radius: 16px 16px 0 0"
+            >
+              <h5 class="modal-title fw-bold text-primary">
+                <i class="fa-regular fa-pen-to-square me-2"></i> Cập nhật hồ sơ
+                Bệnh nhân
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body p-4">
+              <form>
+                <h6 class="fw-bold mb-3 text-muted">1. Thông tin Hành chính</h6>
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Họ và Tên <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="Alberto Ripley"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Số điện thoại <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="+1 54546 45648"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Ngày sinh <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="date"
+                      class="form-control"
+                      value="1990-01-25"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Giới tính <span class="text-danger">*</span></label
+                    >
+                    <select class="form-select">
+                      <option value="Male" selected>Nam</option>
+                      <option value="Female">Nữ</option>
+                      <option value="Other">Khác</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-medium">Địa chỉ liên hệ</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="4150 Hiney Road, Las Vegas, NV 89109"
+                    />
+                  </div>
+                </div>
+
+                <hr class="text-muted opacity-25" />
+
+                <h6 class="fw-bold mb-3 text-muted">2. Thông tin Y tế</h6>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Tiền sử bệnh lý (Medical History)</label
+                    >
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Nhập các bệnh lý nền, dị ứng thuốc..."
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium">Trạng thái hồ sơ</label>
+                    <select class="form-select">
+                      <option value="active" selected>Đang hoạt động</option>
+                      <option value="inactive">Đã khóa / Lưu trữ</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div
+                  class="modal-footer mt-4"
+                  style="
+                    border-top: 1px solid #eaedf1;
+                    padding-top: 1rem;
+                    padding-bottom: 0;
+                  "
+                >
+                  <button
+                    type="button"
+                    class="btn btn-light border"
+                    data-bs-dismiss="modal"
+                  >
+                    Hủy
+                  </button>
+                  <button type="button" class="btn btn-primary-custom">
+                    Lưu thay đổi
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =================add record  ================-->
+      <div
+        class="modal fade"
+        id="addRecordModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div
+            class="modal-content border-0 shadow-lg"
+            style="border-radius: 16px"
+          >
+            <div
+              class="modal-header"
+              style="background-color: #f5f8fa; border-radius: 16px 16px 0 0"
+            >
+              <h5 class="modal-title fw-bold text-success">
+                <i class="fa-regular fa-calendar-plus me-2"></i> Đặt lịch / Thêm
+                ca khám mới
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body p-4">
+              <form>
+                <h6 class="fw-bold mb-3 text-muted">1. Lịch hẹn & Phân công</h6>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Ngày khám (Examined At)
+                      <span class="text-danger">*</span></label
+                    >
+                    <input type="date" class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Ca làm việc <span class="text-danger">*</span></label
+                    >
+                    <select class="form-select" required>
+                      <option selected disabled>Chọn ca...</option>
+                      <option>Ca sáng (08:00 - 12:00)</option>
+                      <option>Ca chiều (13:00 - 17:00)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Phòng khám / Chuyên khoa
+                      <span class="text-danger">*</span></label
+                    >
+                    <select class="form-select" required>
+                      <option selected disabled>Chọn phòng ban...</option>
+                      <option>Phòng Khám Nội 204</option>
+                      <option>Phòng Khám Nhi 211</option>
+                      <option>Phòng Chẩn đoán hình ảnh</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label fw-medium"
+                      >Bác sĩ phụ trách (Doctor)
+                      <span class="text-danger">*</span></label
+                    >
+                    <select class="form-select" required>
+                      <option selected disabled>
+                        Chọn bác sĩ đang trực...
+                      </option>
+                      <option>Bs. Nguyễn Văn A</option>
+                      <option>Bs. Lê Hoàng C</option>
+                    </select>
+                  </div>
+                </div>
+
+                <hr class="text-muted opacity-25" />
+
+                <h6 class="fw-bold mb-3 text-muted">2. Tình trạng bệnh nhân</h6>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Triệu chứng lâm sàng / Lý do khám
+                      <span class="text-danger">*</span></label
+                    >
+                    <textarea
+                      class="form-control"
+                      rows="2"
+                      placeholder="Ví dụ: Đau đầu, sốt cao 39 độ, ho khan..."
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <label class="form-label fw-medium"
+                      >Trạng thái (Status)</label
+                    >
+                    <select class="form-select">
+                      <option value="Pending" selected>
+                        Chờ khám (Pending)
+                      </option>
+                      <option value="Completed">Hoàn thành (Completed)</option>
+                      <option value="Cancelled">Đã hủy (Cancelled)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div
+                  class="modal-footer mt-4"
+                  style="
+                    border-top: 1px solid #eaedf1;
+                    padding-top: 1rem;
+                    padding-bottom: 0;
+                  "
+                >
+                  <button
+                    type="button"
+                    class="btn btn-light border"
+                    data-bs-dismiss="modal"
+                  >
+                    Hủy
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success px-4 text-white fw-bold shadow-sm"
+                    style="border-radius: 8px"
+                  >
+                    Tạo lịch khám
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--========================== edit record =========================-->
+      <div
+        class="modal fade"
+        id="editRecordModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div
+            class="modal-content border-0 shadow-lg"
+            style="border-radius: 16px"
+          >
+            <div
+              class="modal-header"
+              style="
+                background-color: #f8fafc;
+                border-radius: 16px 16px 0 0;
+                border-bottom: 2px solid #eaedf1;
+              "
+            >
+              <h5 class="modal-title fw-bold text-primary">
+                <i class="fa-solid fa-stethoscope me-2"></i> Hồ sơ Khám bệnh
+                (Tiến hành khám)
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-4">
+              <form>
+                <div class="bg-light p-3 rounded-3 mb-4 border">
+                  <div class="row g-2 text-muted" style="font-size: 0.85rem">
+                    <div class="col-md-4">
+                      <div class="fw-bold text-dark">Ngày khám:</div>
+                      30 Apr 2024 - 14:30 PM
+                    </div>
+                    <div class="col-md-4">
+                      <div class="fw-bold text-dark">Phòng khám:</div>
+                      Phòng Nội 204
+                    </div>
+                    <div class="col-md-4">
+                      <div class="fw-bold text-dark">Bác sĩ:</div>
+                      Bs. Nguyễn Văn A
+                    </div>
+                    <div class="col-12 mt-2">
+                      <div class="fw-bold text-dark">Triệu chứng ban đầu:</div>
+                      <span class="text-danger"
+                        >Đau đầu, sốt cao 39 độ, ho khan về đêm.</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="fw-bold mb-3 text-dark">
+                  Kết quả Khám & Chẩn đoán của Bác sĩ
+                </h6>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label fw-medium"
+                      >Chẩn đoán (Diagnosis)
+                      <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nhập kết luận bệnh lý chính xác..."
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mt-3">
+                    <label class="form-label fw-medium"
+                      >Ghi chú & Kê đơn (Note)</label
+                    >
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      placeholder="Nhập lời dặn dò bệnh nhân, hoặc chi tiết đơn thuốc..."
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <label class="form-label fw-medium"
+                      >Cập nhật Trạng thái</label
+                    >
+                    <select
+                      class="form-select bg-light fw-medium border-success-subtle"
+                    >
+                      <option value="Completed" selected>
+                        Hoàn thành (Checked Out)
+                      </option>
+                      <option value="Pending">Chờ khám tiếp</option>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  class="modal-footer mt-4"
+                  style="
+                    border-top: 1px solid #eaedf1;
+                    padding-top: 1rem;
+                    padding-bottom: 0;
+                  "
+                >
+                  <button
+                    type="button"
+                    class="btn btn-light border"
+                    data-bs-dismiss="modal"
+                  >
+                    Đóng
+                  </button>
+                  <button type="button" class="btn btn-primary-custom px-4">
+                    Lưu kết quả khám
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===========================delete patient ====================-->
+      <div
+        class="modal fade"
+        id="deletePatientModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+          <div
+            class="modal-content border-0 shadow-lg"
+            style="border-radius: 16px"
+          >
+            <div class="modal-body p-4 text-center">
+              <div class="text-danger mb-3">
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="font-size: 4rem"
+                ></i>
+              </div>
+              <h5 class="fw-bold mb-2 text-dark">Xác nhận Xóa?</h5>
+              <p class="text-muted mb-4" style="font-size: 0.9rem">
+                Bạn có chắc chắn muốn xóa bệnh nhân này khỏi hệ thống?
+              </p>
+              <div class="d-flex justify-content-center gap-2">
+                <button
+                  type="button"
+                  class="btn btn-light border px-4"
+                  data-bs-dismiss="modal"
+                >
+                  Hủy
+                </button>
+                <button type="button" class="btn btn-danger px-4 shadow-sm">
+                  Xác nhận
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
