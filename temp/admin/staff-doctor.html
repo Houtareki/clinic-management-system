@@ -30,13 +30,13 @@
         </li>
 
         <li class="active">
-          <a href="doctors.html"
-            ><i class="fa-solid fa-user-doctor"></i> Hồ sơ Bác sĩ</a
+          <a href="staff.html"
+            ><i class="fa-solid fa-users"></i> Quản lý Nhân sự</a
           >
         </li>
         <li>
           <a href="patients.html"
-            ><i class="fa-solid fa-user-doctor"></i> Danh sách bệnh nhân</a
+            ><i class="fa-solid fa-user"></i> Danh sách bệnh nhân</a
           >
         </li>
       </ul>
@@ -108,19 +108,45 @@
 
       <div class="container-fluid p-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="fw-bold mb-0">Danh sách Bác sĩ</h4>
+          <h4 class="fw-bold mb-0">Danh sách Nhân sự</h4>
           <button
             class="btn btn-primary-custom shadow-sm"
             data-bs-toggle="modal"
-            data-bs-target="#addDoctorModal "
+            data-bs-target="#addStaffModal"
           >
-            <i class="fa-solid fa-plus me-1"></i> Thêm Bác sĩ
+            <i class="fa-solid fa-plus me-1"></i> Thêm Nhân sự
           </button>
+        </div>
+
+        <div
+          class="d-flex gap-2 mb-4 overflow-auto pb-2"
+          style="white-space: nowrap"
+        >
+          <a href="staff.html">
+            <button class="btn btn-outline-secondary rounded-pill px-4">
+              Tất cả
+            </button>
+          </a>
+          <a href="staff-doctor.html">
+            <button class="btn btn-success rounded-pill px-4 shadow-sm">
+              Bác sĩ
+            </button>
+          </a>
+          <a href="staff-receptionist.html">
+            <button class="btn btn-outline-secondary rounded-pill px-4">
+              Lễ tân
+            </button>
+          </a>
+          <a href="staff-admin.html">
+            <button class="btn btn-outline-secondary rounded-pill px-4">
+              Quản trị viên
+            </button>
+          </a>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
           <div class="col">
-            <div class="doctor-card position-relative">
+            <div class="doctor-card position-relative h-100">
               <div
                 class="dropdown position-absolute top-0 end-0 mt-3 me-3"
                 style="z-index: 2"
@@ -138,7 +164,7 @@
                       class="dropdown-item"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#editDoctorModal"
+                      data-bs-target="#editStaffModal"
                       ><i
                         class="fa-regular fa-pen-to-square me-2 text-primary"
                       ></i>
@@ -150,7 +176,7 @@
                       class="dropdown-item text-danger"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#deleteDoctorModal"
+                      data-bs-target="#deleteStaffModal"
                       ><i class="fa-regular fa-trash-can me-2"></i> Xóa</a
                     >
                   </li>
@@ -167,6 +193,10 @@
                   alt="Doctor"
                 />
                 <div class="doctor-info flex-grow-1">
+                  <span
+                    class="badge bg-success bg-opacity-10 text-success mb-2 border border-success border-opacity-25"
+                    >Bác sĩ</span
+                  >
                   <h5>Bs. Nguyễn Văn A</h5>
                   <div class="specialty">Khoa Tim Mạch</div>
                   <div class="detail-text">
@@ -183,83 +213,15 @@
               </a>
             </div>
           </div>
-
-          <div class="col">
-            <div class="doctor-card position-relative">
-              <div
-                class="dropdown position-absolute top-0 end-0 mt-3 me-3"
-                style="z-index: 2"
-              >
-                <button
-                  class="action-btn dropdown-toggle dropdown-toggle-no-caret"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                >
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="#"
-                      data-bs-toggle="modal"
-                      data-bs-target="#editDoctorModal"
-                      ><i
-                        class="fa-regular fa-pen-to-square me-2 text-primary"
-                      ></i>
-                      Sửa</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item text-danger"
-                      href="#"
-                      data-bs-toggle="modal"
-                      data-bs-target="#deleteDoctorModal"
-                      ><i class="fa-regular fa-trash-can me-2"></i> Xóa</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <a
-                href="doctor-detail.html"
-                class="d-flex gap-3 text-decoration-none text-dark stretched-link"
-              >
-                <img
-                  src="https://ui-avatars.com/api/?name=T+B&background=eaf7ed&color=264b33&size=120"
-                  class="doctor-img shadow-sm"
-                  alt="Doctor"
-                />
-                <div class="doctor-info flex-grow-1">
-                  <h5>Bs. Trần Thị B</h5>
-                  <div class="specialty">Khoa Nhi</div>
-                  <div class="detail-text">
-                    <i
-                      class="fa-solid fa-graduation-cap text-muted me-1 w-15px"
-                    ></i>
-                    Thạc sĩ Y khoa
-                  </div>
-                  <div class="detail-text">
-                    <i class="fa-solid fa-phone text-muted me-1 w-15px"></i>
-                    0912.345.678
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </main>
 
-    <!-- modal -->
     <section>
-      <!-- add doctor -->
       <div
         class="modal fade"
-        id="addDoctorModal"
+        id="addStaffModal"
         tabindex="-1"
-        aria-labelledby="addDoctorModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -271,13 +233,9 @@
               class="modal-header"
               style="background-color: #f5f8fa; border-radius: 16px 16px 0 0"
             >
-              <h5
-                class="modal-title fw-bold text-success"
-                id="addDoctorModalLabel"
-              >
-                <i class="fa-solid fa-user-doctor me-2"></i> Thêm bác sĩ mới
+              <h5 class="modal-title fw-bold text-success">
+                <i class="fa-solid fa-user-plus me-2"></i> Thêm Nhân sự mới
               </h5>
-
               <button
                 type="button"
                 class="btn-close"
@@ -290,6 +248,20 @@
               <form>
                 <h6 class="fw-bold mb-3 text-muted">1. Thông tin Tài khoản</h6>
                 <div class="row g-3 mb-4">
+                  <div class="col-md-12">
+                    <label class="form-label fw-medium"
+                      >Vai trò <span class="text-danger">*</span></label
+                    >
+                    <select
+                      class="form-select border-success"
+                      id="addRoleSelect"
+                      required
+                    >
+                      <option value="doctor" selected>Bác sĩ</option>
+                      <option value="receptionist">Lễ tân</option>
+                      <option value="admin">Quản trị viên</option>
+                    </select>
+                  </div>
                   <div class="col-md-6">
                     <label class="form-label fw-medium"
                       >Họ và Tên <span class="text-danger">*</span></label
@@ -308,7 +280,7 @@
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="VD: xx xxx xxx"
+                      placeholder="VD: 09xx xxx xxx"
                       required
                     />
                   </div>
@@ -317,7 +289,7 @@
                       >Email <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
                       placeholder="VD: abc@xyz.com"
                       required
@@ -339,65 +311,72 @@
                       >Mật khẩu <span class="text-danger">*</span></label
                     >
                     <input
-                      type="text"
+                      type="password"
                       class="form-control"
                       placeholder="••••••••"
                       required
                     />
                   </div>
                 </div>
-                <hr class="text-muted" />
 
-                <h6 class="fw-bold mb-3 text-muted">2. Hồ sơ chuyên môn</h6>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Chuyên khoa <span class="text-danger">*</span></label
-                    >
-                    <select class="form-select">
-                      <option selected>Chọn khoa ...</option>
-                      <option>Khoa nội</option>
-                      <option>Khoa ngoại</option>
-                      <option>Khoa nhi</option>
-                      <option>Khoa tim mạch</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Bằng cấp <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="VD: Tiến sĩ"
-                      required
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label fw-medium"
-                      >Ảnh đại diện <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="link url"
-                      required
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label fw-medium"
-                      >Giới thiệu tiểu sử</label
-                    >
-                    <textarea
-                      class="form-control"
-                      rows="3"
-                      placeholder="Nhập kinh nghiệm làm việc, giới thiệu bản thân..."
-                    ></textarea>
+                <div id="addDoctorFields">
+                  <hr class="text-muted" />
+                  <h6 class="fw-bold mb-3 text-muted">
+                    2. Hồ sơ chuyên môn (Dành riêng cho Bác sĩ)
+                  </h6>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label fw-medium"
+                        >Chuyên khoa <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select">
+                        <option selected>Chọn khoa ...</option>
+                        <option>Khoa nội</option>
+                        <option>Khoa ngoại</option>
+                        <option>Khoa nhi</option>
+                        <option>Khoa tim mạch</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label fw-medium"
+                        >Bằng cấp <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="VD: Tiến sĩ"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label fw-medium"
+                        >Ảnh đại diện <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="link url"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label fw-medium"
+                        >Giới thiệu tiểu sử</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        placeholder="Nhập kinh nghiệm làm việc, giới thiệu bản thân..."
+                      ></textarea>
+                    </div>
                   </div>
                 </div>
+
                 <div
                   class="modal-footer mt-4"
-                  style="border-top: 1px solid #eaedf1; padding-top: 1rem"
+                  style="
+                    border-top: 1px solid #eaedf1;
+                    padding-top: 1rem;
+                    padding-bottom: 0;
+                  "
                 >
                   <button
                     type="button"
@@ -407,7 +386,7 @@
                     Hủy
                   </button>
                   <button type="button" class="btn btn-primary-custom">
-                    Lưu
+                    Lưu Nhân sự
                   </button>
                 </div>
               </form>
@@ -416,12 +395,10 @@
         </div>
       </div>
 
-      <!-- editDoctor -->
       <div
         class="modal fade"
-        id="editDoctorModal"
+        id="editStaffModal"
         tabindex="-1"
-        aria-labelledby="editDoctorModalLabel"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -433,161 +410,31 @@
               class="modal-header"
               style="background-color: #f5f8fa; border-radius: 16px 16px 0 0"
             >
-              <h5
-                class="modal-title fw-bold text-success"
-                id="editDoctorModalLabel"
-              >
-                <i class="fa-solid fa-user-doctor me-2"></i> Cập nhật hồ sơ
+              <h5 class="modal-title fw-bold text-success">
+                <i class="fa-regular fa-pen-to-square me-2"></i> Cập nhật hồ sơ
               </h5>
-
               <button
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"
               ></button>
             </div>
-
-            <div class="modal-body p-4">
-              <form>
-                <h6 class="fw-bold mb-3 text-muted">1. Thông tin Tài khoản</h6>
-                <div class="row g-3 mb-4">
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Họ và Tên <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="VD: Nguyễn Văn A"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Số điện thoại <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="VD: xx xxx xxx"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label class="form-label fw-medium"
-                      >Email <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="VD: abc@xyz.com"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Tên đăng nhập <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="username"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Mật khẩu mới <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="••••••••"
-                      required
-                    />
-                  </div>
-                </div>
-                <hr class="text-muted" />
-
-                <h6 class="fw-bold mb-3 text-muted">2. Hồ sơ chuyên môn</h6>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Chuyên khoa <span class="text-danger">*</span></label
-                    >
-                    <select class="form-select">
-                      <option selected>Chọn khoa ...</option>
-                      <option>Khoa nội</option>
-                      <option>Khoa ngoại</option>
-                      <option>Khoa nhi</option>
-                      <option>Khoa tim mạch</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-medium"
-                      >Bằng cấp <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="VD: Tiến sĩ"
-                      required
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label fw-medium"
-                      >Ảnh đại diện <span class="text-danger">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="link url"
-                      required
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label fw-medium"
-                      >Giới thiệu tiểu sử</label
-                    >
-                    <textarea
-                      class="form-control"
-                      rows="3"
-                      placeholder="Nhập kinh nghiệm làm việc, giới thiệu bản thân..."
-                    ></textarea>
-                  </div>
-                </div>
-                <div
-                  class="modal-footer mt-4"
-                  style="border-top: 1px solid #eaedf1; padding-top: 1rem"
-                >
-                  <button
-                    type="button"
-                    class="btn btn-light border"
-                    data-bs-dismiss="modal"
-                  >
-                    Hủy
-                  </button>
-                  <button type="button" class="btn btn-primary-custom">
-                    Lưu
-                  </button>
-                </div>
-              </form>
+            <div class="modal-body p-4 text-center text-muted">
+              <i>(Form cập nhật tương tự Form Thêm mới)</i>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- delete modal -->
       <div
         class="modal fade"
-        id="deleteDoctorModal"
+        id="deleteStaffModal"
         tabindex="-1"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-sm modal-dialog-centered">
           <div
-            class="modal-content border-0 shaow-lg"
+            class="modal-content border-0 shadow-lg"
             style="border-radius: 16px"
           >
             <div class="modal-body p-4 text-center">
@@ -597,12 +444,10 @@
                   style="font-size: 4rem"
                 ></i>
               </div>
-
               <h5 class="fw-bold mb-2 text-dark">Xác nhận Xóa?</h5>
               <p class="text-muted mb-4" style="font-size: 0.9rem">
-                Bạn có chắc chắn muốn xóa bác sĩ này khỏi hệ thống?
+                Bạn có chắc chắn muốn xóa nhân sự này khỏi hệ thống?
               </p>
-
               <div class="d-flex justify-content-center gap-2">
                 <button
                   type="button"
@@ -620,6 +465,7 @@
         </div>
       </div>
     </section>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
